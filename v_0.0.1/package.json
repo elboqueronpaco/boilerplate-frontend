@@ -1,0 +1,44 @@
+{
+  "name": "boilerplate-frontend",
+  "version": "0.0.1",
+  "description": "Boilerplate d Automatización y Optimización de Tareas FrontEnd con Scripts NPM",
+  "main": "package.json",
+  "scripts": {
+    "sass": "node-sass -w -o ./src/css ./src/scss --source-map ./src/scss",
+    "pug": "pug -w -P ./src/pug/pages/ -o ./src/",
+    "babel": "babel -w ./src/es7/ -d ./src/js/",
+    "watch:dev": "npm-run-all --parallel sass pug babel",
+    "server": "browser-sync start --server --directory --startPath src --severStatic src --files src --reload-delay=300 --reload-debounce=500",
+    "start": "npm-run-all --parallel server watch:dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elboqueronpaco/boilerplate-frontend.git"
+  },
+  "keywords": [
+    "node",
+    "nmp",
+    "sass",
+    "pug",
+    "babel",
+    "ES6"
+  ],
+  "author": "Francisco Javier Moreno García <elboqueronpaco@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elboqueronpaco/boilerplate-frontend/issues"
+  },
+  "homepage": "https://github.com/elboqueronpaco/boilerplate-frontend#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "autoprefixer": "^9.3.1",
+    "browser-sync": "^2.26.3",
+    "node-sass": "^4.10.0",
+    "npm-run-all": "^4.1.3",
+    "parallelshell": "^3.0.2",
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6"
+  }
+}
